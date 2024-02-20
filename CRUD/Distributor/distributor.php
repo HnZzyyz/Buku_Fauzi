@@ -24,7 +24,7 @@ $hasil = $connect->query($sql);
             <div class="container-fluid pt-4 px-4">
                 <div class="vh-100 bg-secondary rounded align-items-center justify-content-center mx-0 p-5">
                     <h1 class="text-center mb-5">Data Tabel Distributor</h1>
-                    <button type="button" class="btn btn-outline-primary">Right</button>
+                    <a href="/CRUD/Distributor/add_distributor.php" class="btn btn-outline-success m-2">Add+</a>
                     <!-- Data Tabel -->
                     <table class="table">
                         <thead>
@@ -32,7 +32,7 @@ $hasil = $connect->query($sql);
                                 <th scope="col">No</th>
                                 <th scope="col">ID</th>
                                 <th scope="col">Nama</th>
-                                <th scope="col">AWell</th>
+                                <th scope="col">Alamat</th>
                                 <th scope="col">No Telp</th>
                                 <th scope="col">Delete & Update</th>
                             </tr>
@@ -49,8 +49,8 @@ $hasil = $connect->query($sql);
                                     <td><?= $item['alamat'] ?></td>
                                     <td><?= $item['telepon'] ?></td>
                                     <td>
-                                        <a href="update_siswa.php?nis=<?= $item['id_distributor'] ?>" class="btn btn-outline-info me-2">Update</a>
-                                        <a href="delete_siswa.php?nis=<?= $item['id_distributor'] ?>" class="btn btn-outline-primary">Delete</a>
+                                        <a href="/CRUD/Distributor/update_distributor.php?id_distributor=<?= $item['id_distributor'] ?>" class="btn btn-outline-info me-2">Update</a>
+                                        <a href="/CRUD/Distributor/delete_distributor.php?id_distributor=<?= $item['id_distributor'] ?>" class="btn btn-outline-primary">Delete</a>
                                     </td>
                                 </tr>
                             <?php } ?>

@@ -18,8 +18,8 @@
                     <div class="nav-item dropdown">
                         <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown"><i class="far fa-file-alt me-2"></i>Pages</a>
                         <div class="dropdown-menu bg-transparent border-0">
-                            <a href="distributor.php" class="dropdown-item">Distributor</a>
-                            <a href="template_based.php" class="dropdown-item active">Template_Based</a>
+                            <a href="../distributor.php" class="dropdown-item">Distributor</a>
+                            <a href="../template_based.php" class="dropdown-item active">Template_Based</a>
                         </div>
                     </div>
                 </div>
