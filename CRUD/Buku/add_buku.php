@@ -1,19 +1,19 @@
 <?php
-include "../layout/header.php";
-include "../config-db.php"
+include "../../layout/header.php";
+include "../../config-db.php"
 ?>
 
 <body>
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Sidebar Start -->
-        <?php include "../layout/sidebar.php" ?>
+        <?php include "../../layout/sidebar.php" ?>
         <!-- Sidebar End -->
 
         <!-- Content Start -->
         <div class="content">
 
             <!-- Navbar Start -->
-            <?php include "../layout/navbar.php" ?>
+            <?php include "../../layout/navbar.php" ?>
             <!-- Navbar End -->
 
 
@@ -67,7 +67,7 @@ include "../config-db.php"
 
 
             <!-- Footer Start -->
-            <?php include "../layout/footer.php" ?>
+            <?php include "../../layout/footer.php" ?>
             <!-- Footer End -->
         </div>
         <!-- Content End -->
@@ -89,7 +89,7 @@ include "../config-db.php"
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="../js/main.js"></script>
+    <script src="../../js/main.js"></script>
 </body>
 
 </html>

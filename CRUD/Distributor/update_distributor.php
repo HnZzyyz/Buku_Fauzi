@@ -1,6 +1,6 @@
 <?php
-include "../layout/header.php";
-include "../config-db.php";
+include "../../layout/header.php";
+include "../../config-db.php";
 
 // Query Untuk Mendapatkan Data Siswa Sesuai Dengan ID
 $sql = 'select * FROM distributor where id_distributor=' . $_GET['id_distributor'];
@@ -28,7 +28,7 @@ if (isset($_POST['id_distributor'])) {
     $connect->query($sql);
 
     // Arahkan Ke Halaman Tampilan Siswa
-    header('location:../distributor.php');
+    header('location:distributor.php');
 }
 // Akhir Proses Update Data
 
@@ -37,14 +37,14 @@ if (isset($_POST['id_distributor'])) {
 <body>
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Sidebar Start -->
-        <?php include "../layout/sidebar.php" ?>
+        <?php include "../../layout/sidebar.php" ?>
         <!-- Sidebar End -->
 
         <!-- Content Start -->
         <div class="content">
 
             <!-- Navbar Start -->
-            <?php include "../layout/navbar.php" ?>
+            <?php include "../../layout/navbar.php" ?>
             <!-- Navbar End -->
    
 
@@ -90,7 +90,7 @@ if (isset($_POST['id_distributor'])) {
 
 
             <!-- Footer Start -->
-            <?php include "../layout/footer.php" ?>
+            <?php include "../../layout/footer.php" ?>
             <!-- Footer End -->
         </div>
         <!-- Content End -->
@@ -112,7 +112,7 @@ if (isset($_POST['id_distributor'])) {
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="../assets/js/main.js"></script>
+    <script src="../../assets/js/main.js"></script>
 </body>
 
 </html>

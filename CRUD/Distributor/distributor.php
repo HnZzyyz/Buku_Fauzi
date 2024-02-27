@@ -1,6 +1,6 @@
 <?php
-include "layout/header.php";
-include "config-db.php";
+include "../../layout/header.php";
+include "../../config-db.php";
 
 $sql = 'select * from distributor';
 $hasil = $connect->query($sql);
@@ -9,14 +9,14 @@ $hasil = $connect->query($sql);
 <body>
     <div class="container-fluid position-relative d-flex p-0">
         <!-- Sidebar Start -->
-        <?php include "layout/sidebar.php" ?>
+        <?php include "../../layout/sidebar.php" ?>
         <!-- Sidebar End -->
 
         <!-- Content Start -->
         <div class="content">
 
             <!-- Navbar Start -->
-            <?php include "layout/navbar.php" ?>
+            <?php include "../../layout/navbar.php" ?>
             <!-- Navbar End -->
 
 
@@ -24,7 +24,7 @@ $hasil = $connect->query($sql);
             <div class="container-fluid pt-4 px-4">
                 <div class="vh-100 bg-secondary rounded align-items-center justify-content-center mx-0 p-5">
                     <h1 class="text-center mb-5">Data Tabel Distributor</h1>
-                    <a href="/CRUD/Distributor/add_distributor.php" class="btn btn-outline-success m-2">Add+</a>
+                    <a href="add_distributor.php" class="btn btn-outline-success m-2">Add+</a>
                     <!-- Data Tabel -->
                     <table class="table">
                         <thead>
@@ -49,8 +49,8 @@ $hasil = $connect->query($sql);
                                     <td><?= $item['alamat'] ?></td>
                                     <td><?= $item['telepon'] ?></td>
                                     <td>
-                                        <a href="/CRUD/Distributor/update_distributor.php?id_distributor=<?= $item['id_distributor'] ?>" class="btn btn-outline-info me-2">Update</a>
-                                        <a href="/CRUD/Distributor/delete_distributor.php?id_distributor=<?= $item['id_distributor'] ?>" class="btn btn-outline-primary">Delete</a>
+                                        <a href="update_distributor.php?id_distributor=<?= $item['id_distributor'] ?>" class="btn btn-outline-info me-2">Update</a>
+                                        <a href="delete_distributor.php?id_distributor=<?= $item['id_distributor'] ?>" class="btn btn-outline-primary">Delete</a>
                                     </td>
                                 </tr>
                             <?php } ?>
@@ -62,7 +62,7 @@ $hasil = $connect->query($sql);
 
 
             <!-- Footer Start -->
-            <?php include "layout/footer.php" ?>
+            <?php include "../../layout/footer.php" ?>
             <!-- Footer End -->
         </div>
         <!-- Content End -->
@@ -84,7 +84,7 @@ $hasil = $connect->query($sql);
     <script src="lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js"></script>
 
     <!-- Template Javascript -->
-    <script src="js/main.js"></script>
+    <script src="../../js/main.js"></script>
 </body>
 
 </html>
