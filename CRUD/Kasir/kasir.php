@@ -2,15 +2,14 @@
 include "../../layout/header.php";
 include "../../config-db.php";
 
-$sql = 'select * from buku';
+$sql = 'select * from kasir';
 $hasil = $connect->query($sql);
 ?>
 
 <body>
-    
     <div class="container-fluid position-relative d-flex p-0">
-        <!-- Spinner Start -->
-        <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+         <!-- Spinner Start -->
+         <div id="spinner" class="show bg-dark position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
             <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
                 <span class="sr-only">Loading...</span>
             </div>
@@ -32,24 +31,19 @@ $hasil = $connect->query($sql);
             <!-- Blank Start -->
             <div class="container-fluid pt-4 px-4">
                 <div class="vh-100 bg-secondary rounded align-items-center justify-content-center mx-0 p-5">
-                    <h1 class="text-center mb-5">Data Tabel Buku</h1>
-                    <a href="add_buku.php" class="btn btn-outline-success m-2">Add+</a>
+                    <h1 class="text-center mb-5">Data Tabel Kasir</h1>
+                    <a href="add_kasir.php" class="btn btn-outline-success m-2">Add+</a>
                     <!-- Data Tabel -->
                     <table class="table">
                         <thead>
                             <tr style="color: white" class="bg-transparent rounded p-5 mx-0">
-                                <th scope="col">No</th>
-                                <th scope="col">ID</th>
-                                <th scope="col">Judul</th>
-                                <th scope="col">No_ISBN</th>
-                                <th scope="col">Penulis</th>
-                                <th scope="col">Penerbit</th>
-                                <th scope="col">Tahun</th>
-                                <th scope="col">Stok</th>
-                                <th scope="col">Harga_Pokok</th>
-                                <th scope="col">Harga_ Jual</th>
-                                <th scope="col">PPN</th>
-                                <th scope="col">Diskon</th>
+                                <th scope="col">Id_Kasir</th>
+                                <th scope="col">Nama</th>
+                                <th scope="col">Alamat</th>
+                                <th scope="col">Telepon</th>
+                                <th scope="col">Status</th>
+                                <th scope="col">Username</th>
+                                <th scope="col">Password</th>
                                 <th scope="col">Delete & Update</th>
                             </tr>
                         </thead>
@@ -59,21 +53,16 @@ $hasil = $connect->query($sql);
                             while ($item = $hasil->fetch_assoc()) {
                             ?>
                                 <tr>
-                                    <th scope="row"><?= $i++ ?></th>
-                                    <td><?= $item['id_buku'] ?></td>
-                                    <td><?= $item['judul'] ?></td>
-                                    <td><?= $item['noisbn'] ?></td>
-                                    <td><?= $item['penulis'] ?></td>
-                                    <td><?= $item['penerbit'] ?></td>
-                                    <td><?= $item['tahun'] ?></td>
-                                    <td><?= $item['stok'] ?></td>
-                                    <td><?= $item['harga_pokok'] ?></td>
-                                    <td><?= $item['harga_jual'] ?></td>
-                                    <td><?= $item['ppn'] ?></td>
-                                    <td><?= $item['diskon'] ?></td>
+                                    <td><?= $item['id_kasir'] ?></td>
+                                    <td><?= $item['nama'] ?></td>
+                                    <td><?= $item['alamat'] ?></td>
+                                    <td><?= $item['telepon'] ?></td>
+                                    <td><?= $item['status'] ?></td>
+                                    <td><?= $item['username'] ?></td>
+                                    <td><?= $item['password'] ?></td>
                                     <td>
-                                        <a href="update_buku.php?id_buku=<?= $item['id_buku'] ?>" class="btn btn-outline-info me-2">Update</a>
-                                        <a href="delete_buku.php?id_buku=<?= $item['id_buku'] ?>" class="btn btn-outline-primary">Delete</a>
+                                        <a href="update_kasir.php?id_kasir=<?= $item['id_kasir'] ?>" class="btn btn-outline-info me-2">Update</a>
+                                        <a href="delete_kasir.php?id_kasir=<?= $item['id_kasir'] ?>" class="btn btn-outline-primary">Delete</a>
                                     </td>
                                 </tr>
                             <?php } ?>

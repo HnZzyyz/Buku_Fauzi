@@ -3,7 +3,7 @@ include "../../layout/header.php";
 include "../../config-db.php";
 
 // Query Untuk Mendapatkan Data Siswa Sesuai Dengan ID
-$sql = 'select * FROM distributor where id_distributor=' . $_GET['id_distributor'];
+$sql = 'select * FROM pasok where id_pasok=' . $_GET['id_pasok'];
 
 // Jalan Query
 $hasil = $connect->query($sql);
@@ -17,18 +17,18 @@ $data = $hasil->fetch_assoc();
 // Proses Update Data
 if (isset($_POST['id_distributor'])) {
     // Buat query update berdasarkan nis
-    $sql = 'UPDATE distributor SET 
+    $sql = 'UPDATE pasok SET 
         id_distributor      ="' . $_POST['id_distributor'] . '",
-        nama_distributor    ="' . $_POST['nama_distributor'] . '",
-        alamat              ="' . $_POST['alamat'] . '",
-        telepon             ="' . $_POST['telepon'] . '"
-        WHERE id_distributor=' . $_GET['id_distributor'];
+        id_buku             ="' . $_POST['id_buku'] . '",
+        jumlah              ="' . $_POST['jumlah'] . '",
+        tanggal             ="' . $_POST['tanggal'] . '"
+        WHERE id_pasok=' . $_GET['id_pasok'];
 
     // Jalankan Query
     $connect->query($sql);
 
     // Arahkan Ke Halaman Tampilan Siswa
-    header('location:distributor.php');
+    header('location:pasok.php');
 }
 // Akhir Proses Update Data
 
@@ -53,35 +53,35 @@ if (isset($_POST['id_distributor'])) {
                 <div class="row vh-50 bg-secondary rounded justify-content-center mx-0">
                     <div class="col-md-6 text-center mt-5 mb-5 w-50">
                         <form action="" method="post" class="row g-3 justify-content-center">
-                            <h3 style="text-align: center;">Update Data Distributor</h3>
+                            <h3 style="text-align: center;">Update Data pasok</h3>
                             <div class="row g-2 align-items-center">
                                 <label for="input" class="col-form-label">Id Distributor</label>
                                 <div class="col-auto" style="width: 100%;">
-                                    <input type="text" name="id_distributor" class="form-control w-100" value="<?= $data['id_distributor'] ?>">
+                                    <input type="number" name="id_distributor" class="form-control w-100" value="<?= $data['id_distributor'] ?>">
                                 </div>
                             </div>
                             <div class="row g-2 align-items-center">
-                                <label for="input" class="col-form-label">Nama Distributor</label>
+                                <label for="input" class="col-form-label">Id Buku</label>
                                 <div class="col-auto" style="width: 100%;">
-                                    <input type="text" name="nama_distributor" class="form-control w-100" value="<?= $data['nama_distributor'] ?>">
+                                    <input type="number" name="id_buku" class="form-control w-100" value="<?= $data['id_buku'] ?>">
                                 </div>
                             </div>
                             <div class="row g-2 align-items-center">
-                                <label for="input" class="col-form-label">Alamat</label>
+                                <label for="input" class="col-form-label">Jumlah</label>
                                 <div class="col-auto" style="width: 100%;">
-                                    <input type="text" name="alamat" class="form-control w-100" value="<?= $data['alamat'] ?>">
+                                    <input type="number" name="jumlah" class="form-control w-100" value="<?= $data['jumlah'] ?>">
                                 </div>
                             </div>
                             <div class="row g-2 align-items-center">
-                                <label for="input" class="col-form-label">Telepon</label>
+                                <label for="input" class="col-form-label">Tanggal</label>
                                 <div class="col-auto" style="width: 100%;">
-                                    <input type="text" name="telepon" class="form-control w-100" value="<?= $data['telepon'] ?>">
+                                    <input type="date" name="tanggal" class="form-control w-100" value="<?= $data['tanggal'] ?>">
                                 </div>
                             </div>                          
                             <div class="btn d-block">
                                 <input class="btn btn-outline-success" style=" width: 100%;" type="submit" value="Submit">
-                                <a href="distributor.php" class="btn btn-outline-danger" style="margin-top: 20px; width: 100%; " > Cancel</a>
-                            </div>                            
+                                <input class="btn btn-outline-danger" style="margin-top: 20px; width: 100%; " type="submit" value="Cancel">
+                            </div>
                         </form>                    
                     </div>
                 </div>

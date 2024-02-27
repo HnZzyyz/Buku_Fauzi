@@ -2,33 +2,31 @@
 include "../../layout/header.php";
 include "../../config-db.php";
 
-// Query Untuk Mendapatkan Data Siswa Sesuai Dengan ID
-$sql = 'select * FROM distributor where id_distributor=' . $_GET['id_distributor'];
-
-// Jalan Query
+// Query Untuk Mendapatkan Data Kasir Sesuai Dengan ID
+$sql = 'select * FROM kasir where id_kasir=' . $_GET['id_kasir'];
 $hasil = $connect->query($sql);
 
-// print_r($hasil->fetch_assoc());
-
-// Variable untuk menyimpan data siswa
 $data = $hasil->fetch_assoc();
 // print_r($data);
 
 // Proses Update Data
-if (isset($_POST['id_distributor'])) {
-    // Buat query update berdasarkan nis
-    $sql = 'UPDATE distributor SET 
-        id_distributor      ="' . $_POST['id_distributor'] . '",
-        nama_distributor    ="' . $_POST['nama_distributor'] . '",
-        alamat              ="' . $_POST['alamat'] . '",
-        telepon             ="' . $_POST['telepon'] . '"
-        WHERE id_distributor=' . $_GET['id_distributor'];
+if (isset($_POST['nama'])) {
+    // Buat query update berdasarkan id
+    $sql = 'UPDATE kasir SET 
+        nama                 ="' . $_POST['nama'] . '",
+        alamat               ="' . $_POST['alamat'] . '",
+        telepon              ="' . $_POST['telepon'] . '",
+        status               ="' . $_POST['status'] . '",
+        username             ="' . $_POST['username'] . '",
+        password             ="' . $_POST['password'] . '",
+        akses                ="' . $_POST['akses'] . '"
+        WHERE id_kasir=' . $_GET['id_kasir'];
 
     // Jalankan Query
     $connect->query($sql);
 
     // Arahkan Ke Halaman Tampilan Siswa
-    header('location:distributor.php');
+    header('location:kasir.php');
 }
 // Akhir Proses Update Data
 
@@ -53,17 +51,11 @@ if (isset($_POST['id_distributor'])) {
                 <div class="row vh-50 bg-secondary rounded justify-content-center mx-0">
                     <div class="col-md-6 text-center mt-5 mb-5 w-50">
                         <form action="" method="post" class="row g-3 justify-content-center">
-                            <h3 style="text-align: center;">Update Data Distributor</h3>
+                            <h3 style="text-align: center;">Update Data Kasir</h3>
                             <div class="row g-2 align-items-center">
-                                <label for="input" class="col-form-label">Id Distributor</label>
+                                <label for="input" class="col-form-label">Nama</label>
                                 <div class="col-auto" style="width: 100%;">
-                                    <input type="text" name="id_distributor" class="form-control w-100" value="<?= $data['id_distributor'] ?>">
-                                </div>
-                            </div>
-                            <div class="row g-2 align-items-center">
-                                <label for="input" class="col-form-label">Nama Distributor</label>
-                                <div class="col-auto" style="width: 100%;">
-                                    <input type="text" name="nama_distributor" class="form-control w-100" value="<?= $data['nama_distributor'] ?>">
+                                    <input type="text" name="nama" class="form-control w-100" value="<?= $data['nama'] ?>">
                                 </div>
                             </div>
                             <div class="row g-2 align-items-center">
@@ -77,10 +69,34 @@ if (isset($_POST['id_distributor'])) {
                                 <div class="col-auto" style="width: 100%;">
                                     <input type="text" name="telepon" class="form-control w-100" value="<?= $data['telepon'] ?>">
                                 </div>
+                            </div>
+                            <div class="row g-2 align-items-center">
+                                <label for="input" class="col-form-label">Status</label>
+                                <div class="col-auto" style="width: 100%;">
+                                    <input type="text" name="status" class="form-control w-100" value="<?= $data['status'] ?>">
+                                </div>
+                            </div>                          
+                            <div class="row g-2 align-items-center">
+                                <label for="input" class="col-form-label">Username</label>
+                                <div class="col-auto" style="width: 100%;">
+                                    <input type="text" name="username" class="form-control w-100" value="<?= $data['username'] ?>">
+                                </div>
+                            </div>                          
+                            <div class="row g-2 align-items-center">
+                                <label for="input" class="col-form-label">Password</label>
+                                <div class="col-auto" style="width: 100%;">
+                                    <input type="password" name="password" class="form-control w-100" value="<?= $data['password'] ?>">
+                                </div>
+                            </div>                          
+                            <div class="row g-2 align-items-center">
+                                <label for="input" class="col-form-label">Akses</label>
+                                <div class="col-auto" style="width: 100%;">
+                                    <input type="text" name="akses" class="form-control w-100" value="<?= $data['akses'] ?>">
+                                </div>
                             </div>                          
                             <div class="btn d-block">
                                 <input class="btn btn-outline-success" style=" width: 100%;" type="submit" value="Submit">
-                                <a href="distributor.php" class="btn btn-outline-danger" style="margin-top: 20px; width: 100%; " > Cancel</a>
+                                <a href="kasir.php" class="btn btn-outline-danger" style="margin-top: 20px; width: 100%; " > Cancel</a>
                             </div>                            
                         </form>                    
                     </div>

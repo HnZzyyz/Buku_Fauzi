@@ -21,96 +21,64 @@ include "../../config-db.php"
             <div class="container-fluid pt-4 px-4">
                 <div class="row p-5 h-auto bg-secondary rounded align-items-center justify-content-center mx-0">
                     <div class="col-md-6 text-center">
-                        <form action="post_buku.php" method="post" class="row g-3 justify-content-center">
-                            <h3 style="text-align: center;">Input Data Buku</h3>
+                        <form action="post_kasir.php" method="post" class="row g-3 justify-content-center">
+                            <h3 style="text-align: center;">Input Data Kasir</h3>
                             <div class="row g-2 align-items-center">
                                 <div class="col-auto">
-                                    <label for="input" class="col-form-label">Id Buku</label>
+                                    <label for="input" class="col-form-label">Nama</label>
                                 </div>
                                 <div class="col-auto" style="width: 100%;">
-                                    <input type="number" name="id_buku" class="form-control w-100">
+                                    <input type="text" name="nama" class="form-control w-100">
                                 </div>
                             </div>
                             <div class="row g-2 align-items-center">
                                 <div class="col-auto">
-                                    <label for="input" class="col-form-label">Judul</label>
+                                    <label for="input" class="col-form-label">Alamat</label>
                                 </div>
                                 <div class="col-auto" style="width: 100%;">
-                                    <input type="text" name="judul" class="form-control w-100">
+                                    <input type="text" name="alamat" class="form-control w-100">
                                 </div>
                             </div>
                             <div class="row g-2 align-items-center">
                                 <div class="col-auto">
-                                    <label for="input" class="col-form-label">No ISBN</label>
+                                    <label for="input" class="col-form-label">Telepon</label>
                                 </div>
                                 <div class="col-auto" style="width: 100%;">
-                                    <input type="number" name="noisbn" class="form-control w-100">
+                                    <input type="number" name="telepon" class="form-control w-100">
                                 </div>
                             </div>
                             <div class="row g-2 align-items-center">
                                 <div class="col-auto">
-                                    <label for="input" class="col-form-label">Penulis</label>
+                                    <label for="input" class="col-form-label">Status</label>
                                 </div>
                                 <div class="col-auto" style="width: 100%;">
-                                    <input type="text" name="penulis" class="form-control w-100">
+                                    <input type="text" name="status" class="form-control w-100">
                                 </div>
                             </div>                           
                             <div class="row g-2 align-items-center">
                                 <div class="col-auto">
-                                    <label for="input" class="col-form-label">Penerbit</label>
+                                    <label for="input" class="col-form-label">Username</label>
                                 </div>
                                 <div class="col-auto" style="width: 100%;">
-                                    <input type="text" name="penerbit" class="form-control w-100">
+                                    <input type="text" name="username" class="form-control w-100">
                                 </div>
                             </div>                           
                             <div class="row g-2 align-items-center">
                                 <div class="col-auto">
-                                    <label for="input" class="col-form-label">Tahun</label>
+                                    <label for="input" class="col-form-label">Password</label>
                                 </div>
                                 <div class="col-auto" style="width: 100%;">
-                                    <input type="number" name="tahun" class="form-control w-100">
+                                    <input type="password" name="password" class="form-control w-100">
                                 </div>
                             </div>                           
                             <div class="row g-2 align-items-center">
                                 <div class="col-auto">
-                                    <label for="input" class="col-form-label">Stok</label>
+                                    <label for="input" class="col-form-label">Akses</label>
                                 </div>
                                 <div class="col-auto" style="width: 100%;">
-                                    <input type="number" name="stok" class="form-control w-100">
+                                    <input type="text" name="akses" class="form-control w-100">
                                 </div>
-                            </div>                           
-                            <div class="row g-2 align-items-center">
-                                <div class="col-auto">
-                                    <label for="input" class="col-form-label">Harga Jual</label>
-                                </div>
-                                <div class="col-auto" style="width: 100%;">
-                                    <input type="number" name="harga_jual" class="form-control w-100">
-                                </div>
-                            </div>                           
-                            <div class="row g-2 align-items-center">
-                                <div class="col-auto">
-                                    <label for="input" class="col-form-label">Harga Pokok</label>
-                                </div>
-                                <div class="col-auto" style="width: 100%;">
-                                    <input type="number" name="harga_pokok" class="form-control w-100">
-                                </div>
-                            </div>                           
-                            <div class="row g-2 align-items-center">
-                                <div class="col-auto">
-                                    <label for="input" class="col-form-label">PPN</label>
-                                </div>
-                                <div class="col-auto" style="width: 100%;">
-                                    <input type="number" name="ppn" class="form-control w-100">
-                                </div>
-                            </div>                           
-                            <div class="row g-2 align-items-center">
-                                <div class="col-auto">
-                                    <label for="input" class="col-form-label">Diskon</label>
-                                </div>
-                                <div class="col-auto" style="width: 100%;">
-                                    <input type="number" name="diskon" class="form-control w-100">
-                                </div>
-                            </div>                           
+                            </div>                             
                             <div class="btn d-block">
                                 <input class="btn btn-outline-success" style=" width: 50%;" type="submit" value="Submit">
                                 <input class="btn btn-outline-danger" style="margin-top: 20px; width: 50%; " type="submit" value="Cancel">
